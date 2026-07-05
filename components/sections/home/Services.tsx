@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import Container from "@/components/layout/Container";
 import { services } from "@/data/services";
+import { iconMap } from "@/data/services";
+
+
 
 export default function Services() {
     return (
@@ -28,7 +31,10 @@ export default function Services() {
 
                 <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
                     {services.map((service, index) => {
-                        const Icon = service.icon;
+                        // const Icon = service.icon;
+
+
+                        const Icon = iconMap[service.icon as keyof typeof iconMap];
 
                         return (
                             <motion.div
@@ -43,7 +49,7 @@ export default function Services() {
                                 className="group rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-white/[0.05]"
                             >
                                 <div className="inline-flex rounded-2xl bg-blue-500/10 p-4 text-blue-400 transition group-hover:scale-110">
-                                    <Icon size={30} />
+                                    {Icon && <Icon size={30} />}
                                 </div>
 
                                 <h3 className="mt-8 text-2xl font-semibold">

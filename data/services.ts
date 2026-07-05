@@ -1,4 +1,18 @@
 
+import {
+  PhoneCall,
+  LayoutDashboard,
+  Workflow,
+  Code2,
+} from "lucide-react";
+
+export const iconMap = {
+  PhoneCall,
+  LayoutDashboard,
+  Workflow,
+  Code2,
+};
+
 export interface Service {
   id: string;
   slug: string;
