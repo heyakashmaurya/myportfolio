@@ -6,6 +6,7 @@ import { blogPosts } from "@/data/blog";
 
 export default function BlogGrid() {
   const posts = blogPosts.filter((post) => !post.featured);
+  
 
   return (
     <section className="pb-28">

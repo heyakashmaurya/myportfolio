@@ -85,19 +85,19 @@ export default function Hero() {
 
           <div className="mt-10 flex items-center gap-5">
             <Link href="https://linkedin.com/in/heyakashmaurya">
-              <FaGithub className="text-zinc-400 transition hover:text-white" />
+              <FaLinkedin className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]  " />
             </Link>
 
             <Link href="https://github.com/heyakashmaurya">
-              <FaLinkedin className="text-zinc-400 transition hover:text-white" />
+              <FaGithub className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
 
             <Link href="https://instagram.com/heyakashmaurya">
-              <FaInstagram className="text-zinc-400 transition hover:text-white" />
+              <FaInstagram className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
 
             <Link href="https://www.youtube.com/@heyakashmaurya">
-              <FaYoutube className="text-zinc-400 transition hover:text-white" />
+              <FaYoutube className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
           </div>
         </motion.div>

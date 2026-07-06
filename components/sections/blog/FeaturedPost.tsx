@@ -26,14 +26,25 @@ export default function FeaturedPost() {
           <div className="grid lg:grid-cols-2">
             {/* Image */}
 
-            <div className="relative min-h-[350px]">
+            <div className="overflow-hidden">
+              <Image
+                src={featuredPost.image}
+                alt={featuredPost.title}
+                width={1200}
+                height={630}
+                priority
+                className="h-auto w-full object-cover"
+              />
+            </div>
+
+            {/* <div className="relative min-h-[350px]">
               <Image
                 src={featuredPost.image}
                 alt={featuredPost.title}
                 fill
                 className="object-cover"
               />
-            </div>
+            </div> */}
 
             {/* Content */}
 

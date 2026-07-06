@@ -171,7 +171,7 @@ export const projects: Project[] = [
         overview:
             "The Hospital Appointment AI Agent helps hospitals reduce receptionist workload by handling appointment booking, cancellations, doctor availability checks, patient FAQs, and multilingual conversations through natural voice interactions.",
 
-        image: "/images/projects/hospital-ai/hospital-thumbnail.png",
+        image: "/images/projects/hospital-ai/hospital-thumbnail1.png",
 
         gallery: [
             "/images/projects/hospital-ai/hospital-dashboard.png",
@@ -338,7 +338,7 @@ export const projects: Project[] = [
     // },
 
     {
-        id: "4",
+        id: "3",
 
         slug: "modern-saas-dashboard",
 

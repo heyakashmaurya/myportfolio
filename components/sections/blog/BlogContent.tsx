@@ -12,8 +12,8 @@ export default function BlogContent({ post }: Props) {
 
                 {/* LONG INTRO */}
                 <div className="space-y-6 text-lg leading-8 text-zinc-300">
-                    <p>{post.overview}</p>
                     <p>{post.longDescription}</p>
+                    <p>{post.overview}</p>
                 </div>
 
                 {/* DYNAMIC CONTENT (SEO STRUCTURE) */}
