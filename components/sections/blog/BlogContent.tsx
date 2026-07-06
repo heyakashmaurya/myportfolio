@@ -17,7 +17,62 @@ export default function BlogContent({ post }: Props) {
                 </div>
 
                 {/* DYNAMIC CONTENT (SEO STRUCTURE) */}
-                {post.content?.sections?.map((section, index) => {
+                {post.content.sections.map((section) => (
+                    <section
+                        key={section.heading}
+                        className="mt-16 space-y-6"
+                    >
+                        <h2 className="text-3xl font-bold text-white">
+                            {section.heading}
+                        </h2>
+
+                        {section.paragraphs?.map((paragraph) => (
+                            <p
+                                key={paragraph}
+                                className="leading-8 text-zinc-400"
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
+
+                        {section.list && (
+                            <ul className="list-disc pl-6 space-y-3 text-zinc-400">
+                                {section.list.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {section.subsections?.map((sub) => (
+                            <div
+                                key={sub.heading}
+                                className="mt-10 space-y-5"
+                            >
+                                <h3 className="text-2xl font-semibold text-white">
+                                    {sub.heading}
+                                </h3>
+
+                                {sub.paragraphs?.map((paragraph) => (
+                                    <p
+                                        key={paragraph}
+                                        className="leading-8 text-zinc-400"
+                                    >
+                                        {paragraph}
+                                    </p>
+                                ))}
+
+                                {sub.list && (
+                                    <ul className="list-disc pl-6 space-y-2 text-zinc-400">
+                                        {sub.list.map((item) => (
+                                            <li key={item}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        ))}
+                    </section>
+                ))}
+                {/* {post.content?.sections?.map((section, index) => {
                     if (section.type === "h2") {
                         return (
                             <h2
@@ -65,7 +120,7 @@ export default function BlogContent({ post }: Props) {
                     }
 
                     return null;
-                })}
+                })} */}
 
                 {/* PROBLEM */}
                 <div>
