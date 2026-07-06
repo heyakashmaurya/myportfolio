@@ -1,17 +1,22 @@
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-
 import { blogPosts } from "@/data/blog";
-
 import BlogHero from "@/components/sections/blog/BlogHero";
 import BlogContent from "@/components/sections/blog/BlogContent";
 import RelatedPosts from "@/components/sections/blog/RelatedPosts";
 import CTA from "@/components/sections/blog/CTA";
 
+// interface Props {
+//   params: Promise<{
+//     slug: string;
+//   }>;
+// }
+
 interface Props {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
 
 export async function generateStaticParams() {
@@ -36,9 +41,28 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    // openGraph: {
+    //   title: post.title,
+    //   description: post.excerpt,
+    //   images: [post.image],
+    // },
+
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.coverImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
       images: [post.image],
     },
   };
@@ -73,6 +97,26 @@ export default async function BlogPostPage({
       />
 
       <CTA />
+
+      <Script
+        id="blog-article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.seoDescription,
+            image: post.image,
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            datePublished: post.publishedAt,
+            dateModified: post.updatedAt || post.publishedAt,
+          }),
+        }}
+      />
     </>
   );
 }

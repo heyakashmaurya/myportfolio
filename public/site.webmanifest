@@ -1,1 +1,21 @@
-manifest: "/site.webmanifest",
+{
+  "name": "Akash Maurya - Full Stack AI Engineer Portfolio",
+  "short_name": "Akash",
+  "description": "Portfolio of Akash Maurya, Full Stack AI Engineer building AI SaaS and Voice Agents",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0f0f0f",
+  "background_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

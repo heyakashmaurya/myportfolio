@@ -30,25 +30,55 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://heyakashmaurya.com"),
   applicationName: "Akash Maurya Portfolio",
   title: {
-    default: "Akash Maurya | Full Stack AI Engineer",
+    // default: "Akash Maurya | Full Stack AI Engineer",
+    // default: "Full Stack AI Engineer | AI SaaS & Voice Agent Developer | Software Developer | Akash Maurya",
+    default:
+      "Full Stack AI Engineer | AI SaaS & Voice Agent Developer | Akash Maurya",
     template: "%s | Akash Maurya",
   },
   category: "Technology",
+
+  // description:
+  //   "Full Stack AI Engineer building AI SaaS platforms, voice agents,Software Development, Custom Software Development and automation systems using Next.js, React, Node.js, and modern AI technologies to help businesses scale and automate workflows.",
+
   description:
-    "Full Stack AI Engineer specializing in AI Voice Agents, SaaS platforms, automation systems, and scalable web applications.",
+    "Full Stack AI Engineer building AI SaaS platforms, AI Voice Agents, custom software, and automation systems using Next.js, React, TypeScript, and Node.js to help businesses scale with modern AI solutions.",
+  // keywords: [
+  //   "heyakashmaurya",
+  //   "Akash Maurya",
+  //   "AI Engineer",
+  //   "Full Stack Developer",
+  //   "Next.js",
+  //   "React",
+  //   "TypeScript",
+  //   "MERN",
+  //   "AI Voice Agent",
+  //   "Vapi",
+  //   "LiveKit",
+  // ],
+
   keywords: [
     "heyakashmaurya",
+    "hey akash maurya",
+    "hey akash maurya developer",
     "Akash Maurya",
-    "AI Engineer",
     "Full Stack Developer",
-    "Next.js",
-    "React",
+    "Full Stack AI Engineer",
+    "AI SaaS Developer",
+    "AI Voice Agent Developer",
+    "Next.js Developer",
+    "React Developer",
     "TypeScript",
-    "MERN",
-    "AI Voice Agent",
+    "Node.js",
+    "MERN Stack",
+    "AI Automation",
     "Vapi",
     "LiveKit",
+    "Portfolio",
+    "Sarvam Ai",
+    "Open Ai"
   ],
+
   authors: [{ name: "Akash Maurya" }],
   creator: "Akash Maurya",
   openGraph: {
@@ -59,13 +89,29 @@ export const metadata: Metadata = {
       "Building AI-powered products with Next.js, React, TypeScript and modern cloud technologies.",
     url: "https://heyakashmaurya.com",
     siteName: "Akash Maurya",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Akash Maurya Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Akash Maurya | Full Stack AI Engineer",
     description:
       "Building AI-powered products with Next.js, React, TypeScript and modern cloud technologies.",
+    images: ["/images/og-image.png"],
   },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
   robots: {
     index: true,
     follow: true,
