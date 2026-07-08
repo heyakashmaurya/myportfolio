@@ -41,7 +41,7 @@ export default function BlogContent({ post }: Props) {
                                     <li key={item}>{item}</li>
                                 ))}
                             </ul>
-                        )}
+                        )} 
 
                         {section.subsections?.map((sub) => (
                             <div
