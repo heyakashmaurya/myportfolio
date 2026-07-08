@@ -1,5 +1,6 @@
 
 import type { BlogPost } from "@/data/blog";
+import BlogCTA from "./BlogCTA";
 
 interface Props {
     post: BlogPost;
@@ -35,13 +36,14 @@ export default function BlogContent({ post }: Props) {
                             </p>
                         ))}
 
+
                         {section.list && (
                             <ul className="list-disc pl-6 space-y-3 text-zinc-400">
                                 {section.list.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
                             </ul>
-                        )} 
+                        )}
 
                         {section.subsections?.map((sub) => (
                             <div
@@ -134,6 +136,7 @@ export default function BlogContent({ post }: Props) {
                     <p className="mt-4 text-zinc-400 leading-8">{post.solution}</p>
                 </div>
 
+
                 {/* FEATURES */}
                 <div>
                     <h2 className="text-3xl font-bold text-white">Key Features</h2>
@@ -194,6 +197,19 @@ export default function BlogContent({ post }: Props) {
                     </div>
                 </div>
 
+                {/* CTA */}
+                {post.cta && (
+                    <BlogCTA
+                        title={post.cta.title}
+                        description={post.cta.description}
+                        buttonText={post.cta.buttonText}
+                        buttonLink={post.cta.buttonLink}
+                        secondaryButtonText={post.cta.secondaryButtonText}
+                        secondaryButtonLink={post.cta.secondaryButtonLink}
+                    />
+                )}
+
+
                 {/* AUTHOR */}
                 <div className="border-t border-white/10 pt-10">
                     <h3 className="text-xl font-semibold text-white">
@@ -215,6 +231,7 @@ export default function BlogContent({ post }: Props) {
                         )}
                     </p>
                 </div>
+
 
             </div>
         </section>

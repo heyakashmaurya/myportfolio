@@ -40,6 +40,18 @@ export interface BlogPost {
     content: {
         sections: BlogSection[];
     };
+
+    // 👇 New CTA
+    cta?: BlogCTA;
+}
+
+export interface BlogCTA {
+    title: string;
+    description: string;
+    buttonText: string;
+    buttonLink: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
 }
 
 export interface BlogSection {
@@ -237,7 +249,18 @@ export const blogPosts: BlogPost[] = [
                         "AI Voice Agents are rapidly becoming a competitive advantage for businesses that rely on phone communication. Companies adopting voice AI today are reducing support costs, improving customer experience, and increasing operational efficiency. As speech models continue to improve, AI Voice Agents will become a standard part of customer service infrastructure across nearly every industry."
                     ]
                 },
+
             ]
+        },
+
+        cta: {
+            title: "Ready to Automate Your Restaurants Calls?",
+            description:
+                "Deploy an AI Voice Agent that books tables, answers customers calls 24/7, and reduces receptionist workload.",
+            buttonText: "Chat on Whatsapp ",
+            buttonLink: "https://wa.me/918887454709",
+            secondaryButtonText: "View AI Solutions",
+            secondaryButtonLink: "/services"
         },
 
 
@@ -280,7 +303,7 @@ export const blogPosts: BlogPost[] = [
 
         updatedAt: "July 8, 2026",
 
-        readTime: "10 min read",
+        readTime: "15 min read",
 
         category: "Healthcare AI",
 
@@ -349,6 +372,8 @@ export const blogPosts: BlogPost[] = [
                         "AI Voice Agents solve this challenge by acting as intelligent virtual receptionists. They answer every patient call instantly, understand natural conversations, schedule appointments automatically, answer frequently asked questions, and integrate directly with hospital management systems. Hospitals can improve patient experience while reducing operational costs and staff workload, freeing up human receptionists to focus on patients who are physically present and need in-person assistance."
                     ]
                 },
+
+
 
                 {
                     heading: "What is an AI Voice Agent for Hospitals?",
@@ -469,10 +494,22 @@ export const blogPosts: BlogPost[] = [
                         "AI Voice Agents are transforming how hospitals communicate with patients. By automating appointment booking, reducing missed calls, answering patient questions, and providing 24/7 support, healthcare organizations can significantly improve efficiency while delivering a better patient experience. As artificial intelligence continues to advance, AI-powered hospital receptionists are becoming an essential part of modern healthcare infrastructure — not a futuristic add-on, but a practical, near-term upgrade to how patients and providers connect.",
                         "Hospitals that invest in this technology now are positioning themselves to meet rising patient expectations while easing the operational strain on their front-desk teams, setting the stage for better care delivery on both sides of the phone line."
                     ]
-                }
+                },
+
 
             ]
-        }
+        },
+
+        cta: {
+            title: "Ready to Automate Your Hospital Calls?",
+            description:
+                "Deploy an AI Voice Agent that books appointments, answers patient calls 24/7, and reduces receptionist workload.",
+            buttonText: "Chat on Whatsapp ",
+            buttonLink: "https://wa.me/918887454709",
+            secondaryButtonText: "View AI Solutions",
+            secondaryButtonLink: "/services"
+        },
+
     }
 
 

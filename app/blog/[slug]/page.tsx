@@ -96,6 +96,7 @@ export default async function BlogPostPage({
         currentSlug={post.slug}
       />
 
+
       <CTA />
 
       <Script
