@@ -101,6 +101,7 @@ export default async function BlogPostPage({ params }: Props) {
             "@type": "Article",
             headline: post.title,
             description: post.seoDescription,
+            seoKeywords: post.seoKeywords,
             image: post.image,
             author: {
               "@type": "Person",
