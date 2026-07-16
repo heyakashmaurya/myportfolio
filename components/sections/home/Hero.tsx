@@ -84,19 +84,19 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex items-center gap-5">
-            <Link href="https://linkedin.com/in/heyakashmaurya">
+            <Link  aria-label="LinkedIn Profile" href="https://linkedin.com/in/heyakashmaurya">
               <FaLinkedin className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]  " />
             </Link>
 
-            <Link href="https://github.com/heyakashmaurya">
+            <Link  aria-label="GitHub Profile" href="https://github.com/heyakashmaurya">
               <FaGithub className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
 
-            <Link href="https://instagram.com/heyakashmaurya">
+            <Link  aria-label="Instagram Profile" href="https://instagram.com/heyakashmaurya">
               <FaInstagram className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
 
-            <Link href="https://www.youtube.com/@heyakashmaurya">
+            <Link  aria-label="YouTube Channel" href="https://www.youtube.com/@heyakashmaurya">
               <FaYoutube className="text-zinc-400 transition hover:text-white size-[20px] md:size-[25px]" />
             </Link>
           </div>
