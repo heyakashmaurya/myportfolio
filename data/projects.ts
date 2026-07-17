@@ -56,6 +56,103 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
+    {
+        id: "2",
+
+        slug: "restaurant-ai-agent",
+
+        title: "Restaurant AI Voice Agent",
+
+        subtitle: "24/7 AI Table Booking Assistant",
+
+        category: "AI Voice Agent",
+
+        featured: true,
+
+        description:
+            "An AI voice assistant that answers restaurant calls and books tables automatically.",
+
+        longDescription:
+            "A production-ready AI voice booking platform built using modern speech and LLM technologies.",
+
+        overview:
+            "This platform allows restaurants to automate customer calls, reservation management, booking confirmations, cancellations, and customer support using natural voice conversations.",
+
+        image: "/images/projects/restaurant-ai/restaurant-thumbnail.png",
+
+        gallery: [
+            "/images/projects/restaurant-ai/restaurant-dashboard.png",
+            "/images/projects/restaurant-ai/restaurant-reservations.png",
+            "/images/projects/restaurant-ai/restaurant-conversation.png",
+            "/images/projects/restaurant-ai/restaurant-customers.png",
+            "/images/projects/restaurant-ai/resto.menu.png",
+            "/images/projects/restaurant-ai/restaurant-flow.png",
+
+        ],
+
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "LiveKit",
+            "OpenAI",
+            "Deepgram",
+        ],
+
+        problem:
+            "Restaurants lose reservations because staff cannot answer every incoming phone call during busy hours.",
+
+        solution:
+            "Built an AI Voice Agent capable of answering calls 24/7, understanding customer requests, checking availability, booking tables, modifying reservations, and sending confirmations.",
+
+        features: [
+            "Natural Voice Conversation",
+            "Real-time Reservation",
+            "Booking Modification",
+            "Booking Cancellation",
+            "Customer Verification",
+            "Restaurant Dashboard",
+            "Live Availability",
+            "Conversation History",
+        ],
+
+        architecture: [
+            "Next.js Frontend",
+            "Node.js Backend",
+            "MongoDB Database",
+            "LiveKit Voice Pipeline",
+            "OpenAI LLM",
+            "Deepgram STT",
+            "Google TTS",
+        ],
+
+        results: [
+            "24/7 Customer Support",
+            "Reduced Missed Calls",
+            "Automated Reservations",
+            "Improved Customer Experience",
+        ],
+
+        role: "Full Stack AI Engineer",
+
+        duration: "3 Weeks",
+
+        team: "Solo",
+
+        client: "Client's Project",
+
+        year: "2026",
+
+        status: "Completed",
+
+        liveUrl: "https://youtube.com/shorts/1VX0vmsJfJM?si=hZzWXSAY3Q18gzsc",
+
+        githubUrl: "https://github.com/heyakashmaurya/Restuarant-Ai-Order-Booking-Sass",
+    },
+
     {
         id: "1",
 
@@ -156,102 +253,6 @@ export const projects: Project[] = [
         liveUrl: "",
 
         githubUrl: "",
-    },
-
-    {
-        id: "2",
-
-        slug: "restaurant-ai-agent",
-
-        title: "Restaurant AI Voice Agent",
-
-        subtitle: "24/7 AI Table Booking Assistant",
-
-        category: "AI Voice Agent",
-
-        featured: true,
-
-        description:
-            "An AI voice assistant that answers restaurant calls and books tables automatically.",
-
-        longDescription:
-            "A production-ready AI voice booking platform built using modern speech and LLM technologies.",
-
-        overview:
-            "This platform allows restaurants to automate customer calls, reservation management, booking confirmations, cancellations, and customer support using natural voice conversations.",
-
-        image: "/images/projects/restaurant-ai/restaurant-thumbnail.png",
-
-        gallery: [
-            "/images/projects/restaurant-ai/restaurant-dashboard.png",
-            "/images/projects/restaurant-ai/restaurant-reservations.png",
-            "/images/projects/restaurant-ai/restaurant-conversation.png",
-            "/images/projects/restaurant-ai/restaurant-customers.png",
-            "/images/projects/restaurant-ai/resto.menu.png",
-            "/images/projects/restaurant-ai/restaurant-flow.png",
-
-        ],
-
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "LiveKit",
-            "OpenAI",
-            "Deepgram",
-        ],
-
-        problem:
-            "Restaurants lose reservations because staff cannot answer every incoming phone call during busy hours.",
-
-        solution:
-            "Built an AI Voice Agent capable of answering calls 24/7, understanding customer requests, checking availability, booking tables, modifying reservations, and sending confirmations.",
-
-        features: [
-            "Natural Voice Conversation",
-            "Real-time Reservation",
-            "Booking Modification",
-            "Booking Cancellation",
-            "Customer Verification",
-            "Restaurant Dashboard",
-            "Live Availability",
-            "Conversation History",
-        ],
-
-        architecture: [
-            "Next.js Frontend",
-            "Node.js Backend",
-            "MongoDB Database",
-            "LiveKit Voice Pipeline",
-            "OpenAI LLM",
-            "Deepgram STT",
-            "Google TTS",
-        ],
-
-        results: [
-            "24/7 Customer Support",
-            "Reduced Missed Calls",
-            "Automated Reservations",
-            "Improved Customer Experience",
-        ],
-
-        role: "Full Stack AI Engineer",
-
-        duration: "3 Weeks",
-
-        team: "Solo",
-
-        client: "Client's Project",
-
-        year: "2026",
-
-        status: "Completed",
-
-        liveUrl: "https://youtube.com/shorts/1VX0vmsJfJM?si=hZzWXSAY3Q18gzsc",
-
-        githubUrl: "https://github.com/heyakashmaurya/Restuarant-Ai-Order-Booking-Sass",
     },
 
     {
