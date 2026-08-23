@@ -1,3 +1,5 @@
+
+
 import { blogPosts } from "@/data/blog";
 
 export default function Categories() {
@@ -23,3 +25,4 @@ export default function Categories() {
     </section>
   );
 }
+

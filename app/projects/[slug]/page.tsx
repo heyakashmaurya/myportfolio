@@ -77,7 +77,7 @@ export default async function ProjectPage({
 
       <ProjectResults project={project} />
 
-      <NextProject currentProject={project} />
+      <NextProject project={project} />
 
       <ProjectCTA />
      

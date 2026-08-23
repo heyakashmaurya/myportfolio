@@ -26,7 +26,7 @@ export default function ServicesPage() {
 
       <Process />
 
-      <TechStack />
+      {/* <TechStack /> */}
 
       <WhyChooseMe />
 
