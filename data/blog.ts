@@ -44,6 +44,11 @@ export interface BlogPost {
     cta?: BlogCTA;
 }
 
+export interface AuthorSocial {
+    platform: string; // "LinkedIn" | "GitHub" | "Instagram" | "Email" etc.
+    url: string;
+}
+
 export interface BlogCTA {
     title?: string;
     description?: string;
@@ -51,6 +56,8 @@ export interface BlogCTA {
     buttonLink?: string;
     secondaryButtonText?: string;
     secondaryButtonLink?: string;
+    // 👇 New: optional "connect with me" links rendered under the CTA buttons
+    socialLinks?: AuthorSocial[];
 }
 
 /**
@@ -72,6 +79,7 @@ export interface BlogFAQ {
     q?: string;
     a?: string;
 }
+
 
 export interface BlogSection {
     heading: string;
@@ -97,6 +105,8 @@ export interface BlogSection {
     subsections?: BlogSubSection[];
 }
 
+
+
 export interface BlogSubSection {
     heading: string;
 
@@ -108,6 +118,7 @@ export interface BlogSubSection {
     table?: BlogTable;
     checklist?: string[];
     tip?: string;
+
 }
 
 
@@ -2743,7 +2754,230 @@ export const blogPosts: BlogPost[] = [
             secondaryButtonText: "View AI Solutions",
             secondaryButtonLink: "/services"
         }
+    },
+
+
+
+    {
+        id: "14", // TODO: next unused id in your real array, e.g. "18"
+        slug: "sarvam-ai-vs-elevenlabs",
+
+        title: "Sarvam AI vs ElevenLabs: Which Text-to-Speech API Actually Wins in 2026?",
+        excerpt:
+            "A hands-on comparison of Sarvam AI and ElevenLabs for voice agents — Hindi and Hinglish quality, latency, voice cloning, and real pricing in INR and USD, with a clear pick by use case instead of a forced winner.",
+
+        seoTitle: "Sarvam AI vs ElevenLabs: Text-to-Speech API Comparison (2026)",
+        seoDescription:
+            "Sarvam AI vs ElevenLabs, tested for real voice agent use — Hindi and Hinglish quality, latency, voice cloning, and INR vs USD pricing at real character volume.",
+        seoKeywords: [
+            "sarvam ai vs elevenlabs",
+            "sarvam vs elevenlabs",
+            "elevenlabs vs sarvam ai",
+            "sarvam ai text to speech",
+            "best text to speech api for indian languages",
+            "ai voice agent tts comparison",
+            "hindi text to speech api"
+        ],
+
+        image: "/images/blog/sarvam-vs-elevenlabs.png", // TODO: add a real cover image at this path
+        coverImageAlt: "Sarvam AI and ElevenLabs text-to-speech APIs compared side by side",
+
+        author: "Akash Maurya",
+        publishedAt: "August 23, 2026",
+        updatedAt: "August 23, 2026",
+        readTime: "12 min read",
+        category: "Voice AI",
+        featured: true,
+        tags: ["Sarvam AI", "ElevenLabs", "Text to Speech", "Voice AI", "TTS API", "Comparison"],
+        technologies: ["Sarvam AI", "ElevenLabs", "LiveKit"],
+
+        overview:
+            "A hands-on comparison of Sarvam AI and ElevenLabs for text-to-speech — Hindi and Indian-language quality, latency, voice cloning, and real pricing in both INR and USD, so you can pick the right engine for your voice agent instead of guessing from a features page.",
+        longDescription:
+            "I've shipped voice agents on both Sarvam AI and ElevenLabs, for clients who needed very different things from the TTS layer — a Hindi-first appointment line for a Tier 2 clinic, and an English-first booking agent for a metro restaurant chain. The two platforms aren't really competing for the same use case, even though they show up next to each other in search results constantly. This is the comparison I wish existed before I had to figure it out by testing both myself.",
+        problem:
+            "Most \"Sarvam vs ElevenLabs\" content online is generic feature-list filler — the kind that lists both platforms' bullet points side by side without ever actually testing either one, or telling you which to pick for a real voice agent handling Indian callers.",
+        solution:
+            "A direct, tested comparison covering the dimensions that actually decide this for a voice agent — Hindi and Hinglish quality, latency under real conditions, voice cloning, and cost at real character volumes — ending in a clear recommendation by use case instead of a forced single winner.",
+
+        features: [
+            "Direct pricing comparison at real character volumes, in both INR and USD",
+            "Hindi and Hinglish voice quality compared against ElevenLabs' Flash and Multilingual models",
+            "Latency numbers for both platforms, evaluated against what a live voice agent actually needs",
+            "Voice cloning capability compared for teams that need a branded voice",
+            "A recommendation by use case instead of a forced single winner",
+            "A working pattern for running both engines in one voice agent, routed by language"
+        ],
+        results: [
+            "A cost estimate for your own expected monthly character volume, in both currencies",
+            "A clear answer on Sarvam vs ElevenLabs for Hindi/Hinglish callers versus English-first callers",
+            "Know when you actually need both engines instead of forcing one to do everything",
+            "Avoid the two most common mistakes teams make when benchmarking TTS APIs for voice agents"
+        ],
+
+        content: {
+            sections: [
+                {
+                    heading: "Sarvam or ElevenLabs? The Question I Get Asked Every Week",
+                    paragraphs: [
+                        "I build AI voice agents for a living, which means this question lands in my inbox or WhatsApp almost every week: should I use Sarvam AI or ElevenLabs for text-to-speech? Usually it's a founder who's read two conflicting blog posts, or a developer who's about to wire up a LiveKit pipeline and doesn't want to redo the TTS layer three months from now.",
+                        "The honest answer isn't \"ElevenLabs is better\" or \"Sarvam is better.\" It's a question of who's calling. If your callers speak Hindi, or switch between Hindi and English mid-sentence the way most of India actually talks on the phone, one of these platforms is built for that and the other is adapting to it. That difference matters more than any spec sheet, and it's the reason this comparison exists — not because these are two competing logos, but because I've shipped voice agents on both and the choice genuinely changes what the caller hears."
+                    ]
+                },
+                {
+                    heading: "The Short Answer, If You're in a Hurry",
+                    paragraphs: [
+                        "Building for Hindi-first or Hinglish callers — customer support, appointment booking, IVR, anything where someone might say \"mera order kahan hai\" in the middle of an English sentence? Use Sarvam AI. It's built around code-switching, it's meaningfully cheaper at volume, and it sounds like someone who actually speaks Hindi, not a translation engine reading Hindi text out loud.",
+                        "Building for English-first callers, need the widest global language range, or need a cloned brand voice that has to sound genuinely convincing? Use ElevenLabs. Its Flash and Multilingual models are still the benchmark for English voice quality and voice cloning, and nothing in Sarvam's lineup is trying to compete on that specific ground.",
+                        "Building for both — a support line that gets calls in Hindi, English, and everything in between, which describes most Indian businesses I work with? Don't force a single winner. Run both, and route by detected language. It's more integration work up front, but it's the setup I actually recommend to clients, and it's what I'd build for my own product."
+                    ]
+                },
+                {
+                    heading: "Sarvam AI and ElevenLabs: What Each One Actually Does Well",
+                    subsections: [
+                        {
+                            heading: "Sarvam AI Text-to-Speech: Built Around How India Actually Speaks",
+                            paragraphs: [
+                                "Sarvam's TTS model, Bulbul V3, covers 11 Indian languages with 25+ voices, and it isn't a general multilingual model that happens to include Hindi — it's trained specifically on Indian speech patterns, including the code-switching that generic TTS handles badly. A sentence like \"Your appointment hai kal shaam 5 baje, please arrive 10 minutes early\" — completely normal phrasing for a huge share of Indian callers — gets generated in a single pass, without the audible pause or accent shift you get when a system detects a language boundary mid-sentence and hands off between engines.",
+                                "Streaming latency is sub-250ms to first byte over WebSocket, which is fast enough for a live conversational agent, and there's a text normalizer built specifically for Indian data — PIN codes, rupee amounts, ten-digit phone numbers, and Indian names, all of which trip up TTS engines trained mostly on Western data."
+                            ]
+                        },
+                        {
+                            heading: "ElevenLabs Text-to-Speech: The Benchmark for English Voice Quality",
+                            paragraphs: [
+                                "ElevenLabs isn't trying to compete on Indian-language depth — it's competing on breadth and raw voice quality. Flash v2.5 generates speech in roughly 75ms, about as fast as commercial TTS gets, across 32 languages. Of those 32, exactly two are Indian languages: Hindi and Tamil. If your voice agent needs Telugu, Kannada, Bengali, Marathi, or Gujarati, ElevenLabs simply doesn't have a model for it — Sarvam does.",
+                                "Where ElevenLabs pulls ahead is voice cloning and English narration quality. Instant Voice Cloning is available on every paid plan, Professional Voice Cloning (the higher-fidelity option for a genuine brand voice) sits on the Scale tier and up, and for straight English speech, the Multilingual v2 and newer v3 models are still what most developers benchmark against."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Sarvam AI vs ElevenLabs: Side-by-Side Comparison",
+                    paragraphs: [
+                        "Here's how the two actually stack up once you get past the marketing pages:"
+                    ],
+                    table: {
+                        headers: ["Category", "Sarvam AI (Bulbul V3)", "ElevenLabs (Flash / Multilingual)"],
+                        rows: [
+                            ["Indian languages", "11 languages, 25+ voices", "Hindi and Tamil only, out of 32 total"],
+                            ["Code-switching (Hinglish etc.)", "Native, single-pass generation", "Not designed for this — switches at language boundaries"],
+                            ["Global language range", "India-focused; not built for this", "32 languages (Flash v2.5), strong global coverage"],
+                            ["Latency", "Sub-250ms to first byte (streaming)", "~75ms generation (Flash v2.5)"],
+                            ["Voice cloning", "Available, not the primary strength", "Instant + Professional cloning, widely considered best-in-class"],
+                            ["Pricing model", "INR, pay-as-you-go, ~₹15–30 per 10,000 characters", "USD, tiered plans + PAYG, ~$0.05–0.10 per 1,000 characters"],
+                            ["Free tier", "₹1,000 in free credits", "Free plan, ~10,000 characters/month"],
+                            ["Best fit", "Hindi/Hinglish-heavy Indian voice agents", "English-first products, global apps, branded voice cloning"]
+                        ]
+                    }
+                },
+                {
+                    heading: "The Numbers That Actually Matter",
+                    subsections: [
+                        {
+                            heading: "Pricing at Real Volume, Not Advertised Entry Price",
+                            paragraphs: [
+                                "At a moderate voice agent volume — say 100,000 characters of TTS output a month, roughly what a single-location business generates on steady call volume — Sarvam runs somewhere around ₹150–300 (under $4) on pay-as-you-go pricing. On ElevenLabs, that volume fits inside the $5–6/month Starter API plan if you're using Flash or Turbo, which includes about 120,000 Flash characters, or you'd need the $22/month Creator plan for Multilingual v2 quality at that volume.",
+                                "Scale past a few hundred thousand characters a month and the gap widens fast, mostly because Sarvam's per-character rate doesn't really change with volume the way ElevenLabs' plan tiers do. Run your own expected monthly character count through both before deciding — the entry-level sticker price on either platform isn't what you'll actually pay at production volume."
+                            ]
+                        },
+                        {
+                            heading: "Latency: Does 75ms vs 250ms Actually Matter?",
+                            paragraphs: [
+                                "On paper, ElevenLabs' 75ms generation time beats Sarvam's sub-250ms streaming latency by a wide margin. In practice, for a phone-based voice agent, both are well inside the range where a caller perceives the response as immediate — human conversational turn-taking has natural gaps in the 200–500ms range anyway, and once you add network round-trip and telephony overhead on top of either number, the practical difference shrinks a lot.",
+                                "Where it matters more is consistency. Sarvam's streaming latency is what you get across all 11 of its languages, while ElevenLabs' fastest number is specific to Flash v2.5 — its higher-quality Multilingual models trade some of that speed for better prosody."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Which One Should You Actually Pick?",
+                    paragraphs: [
+                        "This is where most comparisons cop out and tell you \"it depends on your needs\" without saying what that actually means. Here's how I'd map it to real businesses:"
+                    ],
+                    list: [
+                        "Hindi or regional-language-first support line — banking, healthcare, government services → Sarvam AI, no contest",
+                        "English-first business — SaaS support, international bookings, a line serving NRI or overseas customers → ElevenLabs",
+                        "Branded voice for marketing, ads, or a consistent \"face\" for your product across content → ElevenLabs, for the cloning quality",
+                        "Restaurant, salon, or clinic in a Tier 2/3 Indian city where most callers speak Hindi or mix Hindi and English → Sarvam AI",
+                        "A call center or AI receptionist serving a genuinely mixed customer base, in English and Hindi/regional languages → both, routed by detected language — this is the one most Indian businesses actually need"
+                    ]
+                },
+                {
+                    heading: "Running Both in the Same Voice Agent",
+                    paragraphs: [
+                        "If you're building this yourself: the cleanest pattern is to detect language from the caller's speech-to-text output, or ask upfront — \"Hindi ya English?\" — and store the preference, then route the TTS call accordingly, using Sarvam for Hindi/regional segments and ElevenLabs for English segments. Both expose a standard streaming API, so neither is hard to wire into a LiveKit or Twilio Media Streams pipeline.",
+                        "The extra complexity is real — you're maintaining two API keys, two billing dashboards, and two voice identities that need to feel like the same \"agent\" to the caller — but for a business that genuinely serves both language groups, it beats forcing every caller through a TTS engine that wasn't built for their language."
+                    ],
+                    tip: "If you're short on integration time, start with one engine for the whole product and add the second only once you have real call data showing a meaningful share of Hindi/regional-language callers. Don't build a dual pipeline on day one for a caller base that might turn out to be 90% English anyway."
+                },
+                {
+                    heading: "Before You Commit to Either One",
+                    checklist: [
+                        "Generate the same 5–10 real sentences from your actual use case — not demo text — on both platforms and listen side by side, in the language your callers actually use",
+                        "Test at least one Hinglish or code-switched sentence, since that's where the real difference shows up",
+                        "Calculate cost at your expected monthly character volume, not the advertised entry price",
+                        "Check which output formats and streaming protocol each API needs to integrate with your telephony or voice stack (WebSocket support, PCM vs MP3, chunk size)",
+                        "Confirm current pricing directly on each platform before finalizing a contract — both have adjusted pricing more than once this year",
+                        "If you serve both Hindi/regional and English-first callers, budget for running both engines rather than compromising on one"
+                    ]
+                },
+                {
+                    heading: "Mistakes I See Teams Make Comparing These Two",
+                    list: [
+                        "Testing only with clean, single-language demo text instead of real, messy, code-switched sentences from the actual use case",
+                        "Comparing ElevenLabs' advertised entry price against Sarvam's per-character rate without normalizing for actual monthly volume",
+                        "Assuming ElevenLabs \"supports Hindi\" the same way Sarvam does, because it appears on a language list — supported and specialized are not the same thing",
+                        "Picking one platform for an entire product when the caller base is genuinely mixed-language, instead of routing by language",
+                        "Skipping a real listening test with native speakers and deciding based on spec sheets alone"
+                    ]
+                },
+                {
+                    heading: "FAQs",
+                    faqs: [
+                        {
+                            q: "Is Sarvam AI better than ElevenLabs for Hindi text-to-speech?",
+                            a: "For Hindi, and especially Hinglish (mixed Hindi-English), yes — Sarvam's Bulbul V3 is trained specifically on Indian speech patterns and handles code-switching natively, while ElevenLabs applies patterns built across its 32 supported languages generally, with Hindi as one of them rather than a specialization."
+                        },
+                        {
+                            q: "Does ElevenLabs support Indian languages?",
+                            a: "ElevenLabs' Flash v2.5 and Multilingual models support Hindi and Tamil specifically, out of 32 total languages. They don't cover Telugu, Kannada, Bengali, Marathi, Gujarati, Malayalam, Punjabi, or Odia — languages Sarvam supports natively."
+                        },
+                        {
+                            q: "Which is cheaper, Sarvam AI or ElevenLabs?",
+                            a: "At comparable character volumes, Sarvam AI is usually the cheaper option. Its pay-as-you-go pricing runs roughly ₹15–30 per 10,000 characters, while ElevenLabs' published API rates are about $0.05 per 1,000 characters on Flash/Turbo and $0.10 per 1,000 on Multilingual v2/v3, plus a monthly plan minimum starting around $5–6. Run your own expected volume through both before deciding — the gap changes depending on which ElevenLabs model you need."
+                        },
+                        {
+                            q: "Can I use Sarvam AI and ElevenLabs together in the same voice agent?",
+                            a: "Yes, and for businesses serving both Hindi/regional and English-first callers, I usually recommend exactly that — route to Sarvam for Hindi/regional-language segments and ElevenLabs for English, based on detected language or caller preference, rather than forcing one engine to handle everything."
+                        },
+                        {
+                            q: "Which platform has better voice cloning?",
+                            a: "ElevenLabs. Voice cloning is one of its core strengths — Instant Voice Cloning is available on paid plans and Professional Voice Cloning on higher tiers — and it isn't the focus of Sarvam's product, even though Bulbul V3 does include a cloning feature."
+                        }
+                    ]
+                }
+            ]
+        },
+
+        cta: {
+            title: "Not Sure Which One Fits Your Voice Agent?",
+            description:
+                "I build production voice agents on both Sarvam AI and ElevenLabs — including hybrid pipelines that route between them by language. If you're stuck choosing, or just want someone to build the right one, let's talk.",
+            buttonText: "Chat on WhatsApp",
+            buttonLink: "https://wa.me/918887454709",
+            secondaryButtonText: "View Services",
+            secondaryButtonLink: "/services",
+            // Verified directly from heyakashmaurya.com/contact — Instagram wasn't listed there,
+            // so I left it out rather than guess. Send me the handle and I'll add it.
+            socialLinks: [
+                { platform: "LinkedIn", url: "https://linkedin.com/in/heyakashmaurya" },
+                { platform: "GitHub", url: "https://github.com/heyakashmaurya" },
+                { platform: "Email", url: "mailto:akash45492@gmail.com" }
+                // { platform: "Instagram", url: "https://instagram.com/YOUR_HANDLE" }, // TODO
+            ]
+        }
     }
+
 
 ];
 
