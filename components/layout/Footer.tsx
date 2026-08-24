@@ -164,7 +164,7 @@ export default function Footer() {
                             </p>
 
                             <Link
-                                href="#contact"
+                                href="/contact"
                                 className="mt-6 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.25)]"
                             >
                                 Start a conversation
