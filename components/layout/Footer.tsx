@@ -7,6 +7,7 @@ import {
     FaInstagram,
     FaLinkedinIn,
 } from "react-icons/fa6";
+import Logo from "./Logo";
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -30,12 +31,12 @@ export default function Footer() {
                             className="inline-flex items-center gap-3"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/10 text-sm font-bold text-blue-400">
-                                AM
+                                <Logo/>
                             </span>
 
-                            <span className="text-lg font-semibold tracking-tight">
+                            {/* <span className="text-lg font-semibold tracking-tight">
                                 Akash Maurya
-                            </span>
+                            </span> */}
                         </Link>
 
                         <p className="mt-5 max-w-sm text-sm leading-7 text-zinc-400">
@@ -84,19 +85,19 @@ export default function Footer() {
                             </h3>
 
                             <ul className="mt-5 space-y-3">
-                                <FooterLink href="#about">
+                                <FooterLink href="/about">
                                     About
                                 </FooterLink>
 
-                                <FooterLink href="#services">
+                                <FooterLink href="/services">
                                     Services
                                 </FooterLink>
 
-                                <FooterLink href="#projects">
+                                <FooterLink href="/projects">
                                     Projects
                                 </FooterLink>
 
-                                <FooterLink href="#contact">
+                                <FooterLink href="/contact">
                                     Contact
                                 </FooterLink>
                             </ul>
@@ -108,19 +109,19 @@ export default function Footer() {
                             </h3>
 
                             <ul className="mt-5 space-y-3">
-                                <FooterLink href="#skills">
+                                <FooterLink href="/services">
                                     AI Engineering
                                 </FooterLink>
 
-                                <FooterLink href="#skills">
+                                <FooterLink href="/services">
                                     Full Stack
                                 </FooterLink>
 
-                                <FooterLink href="#skills">
+                                <FooterLink href="/services">
                                     SaaS
                                 </FooterLink>
 
-                                <FooterLink href="#skills">
+                                <FooterLink href="/services">
                                     Automation
                                 </FooterLink>
                             </ul>
@@ -132,15 +133,15 @@ export default function Footer() {
                             </h3>
 
                             <ul className="mt-5 space-y-3">
-                                <FooterLink href="#contact">
+                                <FooterLink href="/contact">
                                     Hire Me
                                 </FooterLink>
 
-                                <FooterLink href="#contact">
+                                <FooterLink href="/contact">
                                     Let's Talk
                                 </FooterLink>
 
-                                <FooterLink href="#projects">
+                                <FooterLink href="/projects">
                                     My Work
                                 </FooterLink>
                             </ul>
