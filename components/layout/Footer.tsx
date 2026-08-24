@@ -28,9 +28,9 @@ export default function Footer() {
                     <div>
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-3"
+                            // className="inline-flex items-center gap-3"
                         >
-                            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/10 text-sm font-bold text-blue-400">
+                            <span className=" h-10 w-10 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/10 text-sm font-bold text-blue-400">
                                 <Logo/>
                             </span>
 
