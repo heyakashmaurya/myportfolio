@@ -151,7 +151,7 @@ export default function FeaturedProject() {
                             <div className="flex flex-col justify-between">
                                 {/* Project highlights */}
                                 <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
-                                    <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-600">
+                                    <p className="text-xs font-medium uppercase tracking-[0.2em] !text-zinc-600">
                                         Project Focus
                                     </p>
 
@@ -203,7 +203,7 @@ export default function FeaturedProject() {
                                 <div className="mt-8 flex flex-wrap gap-3">
                                     <Link
                                         href={`/projects/${project.slug}`}
-                                        className="group inline-flex h-11 items-center justify-center rounded-xl bg-white px-5 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-200"
+                                        className="group inline-flex h-11 items-center justify-center rounded-xl bg-white px-5 text-sm font-medium !text-zinc-950 transition-colors hover:bg-zinc-200"
                                     >
                                         View Case Study
                                         <ArrowRight
