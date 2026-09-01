@@ -13,7 +13,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="relative mt-20 overflow-hidden border-t border-white/10">
+        <footer className="relative mt-10 overflow-hidden border-t border-white/10">
             {/* Ambient glow */}
             <div className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-600/10 blur-[120px]" />

@@ -12,6 +12,23 @@ export const metadata: Metadata = {
     title: "AI & SaaS Development Blog | Akash Maurya",
     description:
         "Read insights about AI Voice Agents, SaaS development, automation systems,custom software Development, Next.js, and modern full stack engineering.",
+
+    alternates: {
+        canonical: "/blog",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://heyakashmaurya.com/blog",
+        title: "Blog Akash Maurya | Full Stack AI Engineer",
+        description:
+            "Read insights about AI Voice Agents, SaaS development, automation systems,custom software Development, Next.js, and modern full stack engineering.",
+    },
 };
 
 export default function BlogPage() {
@@ -26,8 +43,8 @@ export default function BlogPage() {
             <BlogGrid />
 
             <CTA />
-            
-            
+
+
         </>
     );
 }

@@ -40,7 +40,9 @@ export const metadata: Metadata = {
 
   // description:
   //   "Full Stack AI Engineer building AI SaaS platforms, voice agents,Software Development, Custom Software Development and automation systems using Next.js, React, Node.js, and modern AI technologies to help businesses scale and automate workflows.",
-
+  alternates: {
+    canonical: "/",
+  },
   description:
     "Full Stack AI Engineer building AI SaaS platforms, AI Voice Agents, custom software, and automation systems using Next.js, React, TypeScript, and Node.js to help businesses scale with modern AI solutions.",
   // keywords: [

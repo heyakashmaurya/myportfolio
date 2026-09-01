@@ -9,6 +9,23 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Akash Maurya to discuss AI Voice Agents, SaaS platforms, automation, or full-stack development projects.",
+  
+  alternates: {
+    canonical: "/contact",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://heyakashmaurya.com/contact",
+    title: "Contact Akash Maurya | Full Stack AI Engineer",
+    description:
+      "Get in touch with Akash Maurya to discuss AI Voice Agents, SaaS platforms, automation, or full-stack development projects.",
+  },
 };
 
 export default function ContactPage() {

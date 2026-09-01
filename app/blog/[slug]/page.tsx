@@ -20,6 +20,43 @@ export async function generateStaticParams() {
   }));
 }
 
+// export async function generateMetadata({
+//   params,
+// }: Props): Promise<Metadata> {
+//   const { slug } = await params;
+
+//   const post = blogPosts.find((item) => item.slug === slug);
+
+//   if (!post) {
+//     return {
+//       title: "Article Not Found",
+//     };
+//   }
+
+//   return {
+//     title: post.title,
+//     description: post.excerpt,
+//     openGraph: {
+//       title: post.seoTitle || post.title,
+//       description: post.seoDescription || post.excerpt,
+//       images: [
+//         {
+//           url: post.image,
+//           width: 1200,
+//           height: 630,
+//           alt: post.coverImageAlt,
+//         },
+//       ],
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: post.seoTitle || post.title,
+//       description: post.seoDescription || post.excerpt,
+//       images: [post.image],
+//     },
+//   };
+// }
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -30,15 +67,38 @@ export async function generateMetadata({
   if (!post) {
     return {
       title: "Article Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const canonicalUrl = `https://heyakashmaurya.com/blog/${post.slug}`;
+
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: post.seoTitle || post.title,
+
+    description: post.seoDescription || post.excerpt,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
     openGraph: {
+      type: "article",
+      url: canonicalUrl,
+
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.excerpt,
+
+      description:
+        post.seoDescription || post.excerpt,
+
       images: [
         {
           url: post.image,
@@ -47,15 +107,35 @@ export async function generateMetadata({
           alt: post.coverImageAlt,
         },
       ],
+
+      publishedTime: post.publishedAt,
+
+      ...(post.updatedAt
+        ? {
+          modifiedTime: post.updatedAt,
+        }
+        : {}),
     },
+
     twitter: {
       card: "summary_large_image",
+
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.excerpt,
+
+      description:
+        post.seoDescription || post.excerpt,
+
       images: [post.image],
     },
+
+    authors: [
+      {
+        name: post.author,
+      },
+    ],
   };
 }
+
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
@@ -92,7 +172,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <CTA />
 
-      <Script
+      {/* <Script
         id="blog-article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -111,7 +191,54 @@ export default async function BlogPostPage({ params }: Props) {
             dateModified: post.updatedAt || post.publishedAt,
           }),
         }}
+      /> */}
+
+
+      <Script
+        id="blog-article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+
+            "@id": `https://heyakashmaurya.com/blog/${post.slug}#article`,
+
+            headline: post.title,
+
+            description:
+              post.seoDescription || post.excerpt,
+
+            image: [
+              `https://heyakashmaurya.com${post.image.startsWith("/") ? "" : "/"}${post.image}`,
+            ],
+
+            author: {
+              "@type": "Person",
+              name: post.author,
+              url: "https://heyakashmaurya.com/about",
+            },
+
+            publisher: {
+              "@type": "Person",
+              name: "Akash Maurya",
+              url: "https://heyakashmaurya.com",
+            },
+
+            datePublished: post.publishedAt,
+
+            dateModified:
+              post.updatedAt || post.publishedAt,
+
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://heyakashmaurya.com/blog/${post.slug}`,
+            },
+          }),
+        }}
       />
+
+
 
       {/* Only emitted when the post actually has FAQ content, so it
           never ships an empty/invalid FAQPage block. This is what

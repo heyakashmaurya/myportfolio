@@ -13,6 +13,23 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Professional AI Voice Agent, SaaS Development, Automation and Full Stack Development services by Akash Maurya.",
+
+  alternates: {
+    canonical: "/services",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://heyakashmaurya.com/services",
+    title: "Service Akash Maurya | Full Stack AI Engineer",
+    description:
+      "Professional AI Voice Agent, SaaS Development, Automation and Full Stack Development services by Akash Maurya.",
+  },
 };
 
 export default function ServicesPage() {
